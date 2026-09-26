@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="quietframe-channel-logo.png">
+    <link rel="apple-touch-icon" href="quietframe-channel-logo.png">
 
 <title>Quietframe Gaming</title>
 
@@ -10,26 +12,21 @@
 content="Quietframe Gaming — GTA V, Red Dead Redemption 2 and more gaming adventures.">
 
 <style>
-
-/* =========================================================
-   QUIETFRAME GAMING
-   PREMIUM GAMING WEBSITE
-========================================================= */
-
 :root {
     --black: #030406;
     --black2: #080a0f;
     --card: #0d1016;
-
     --red: #e5092f;
     --red-light: #ff3155;
-
     --white: #ffffff;
     --gray: #9298a4;
-
     --border: rgba(255,255,255,.09);
+    --qf-red: #ff1744;
+    --qf-red-soft: rgba(255,23,68,.22);
+    --qf-glass: rgba(12,15,22,.68);
 }
 
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -41,61 +38,40 @@ html {
 }
 
 body {
-    font-family:
-        Arial,
+    font-family: Arial,
         Helvetica,
         sans-serif;
-
-    background: var(--black);
+    background: radial-gradient(circle at 15% 15%,rgba(255,23,68,.07),transparent 28%),
+    radial-gradient(circle at 85% 70%,rgba(45,76,160,.055),transparent 30%),
+    #030406;
     color: var(--white);
-
     overflow-x: hidden;
 }
 
 
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
+/* ===== BACKGROUND GLOW / GRID ===== */
 body::before {
-
     content: "";
-
     position: fixed;
-
     width: 700px;
     height: 700px;
-
     right: -300px;
     top: -250px;
-
     background: var(--red);
-
     opacity: .045;
-
     filter: blur(160px);
-
     border-radius: 50%;
-
     pointer-events: none;
-
     z-index: -1;
 }
 
 body::after {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
-    opacity: .025;
-
-    background-image:
-        linear-gradient(
+    opacity: .018;
+    background-image: linear-gradient(
             rgba(255,255,255,.7) 1px,
             transparent 1px
         ),
@@ -104,251 +80,1239 @@ body::after {
             rgba(255,255,255,.7) 1px,
             transparent 1px
         );
-
-    background-size: 80px 80px;
-
+    background-size: 64px 64px;
     z-index: -1;
 }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
-
+/* ===== NAVBAR ===== */
 nav {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-    height: 76px;
-
+    height: 82px;
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 7%;
-
-    background:
-        rgba(3,4,6,.72);
-
-    backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid rgba(255,255,255,.07);
-
+    padding: 0 clamp(18px,6vw,90px);
+    background: rgba(3,4,6,.58);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,.07);
     z-index: 1000;
-
     transition: .3s;
+    box-shadow: 0 12px 45px rgba(0,0,0,.25);
 }
 
 .logo {
-
     color: white;
-
     text-decoration: none;
-
     font-size: 21px;
-
     font-weight: 900;
-
     letter-spacing: 1px;
 }
 
 .logo span {
-
     color: var(--red);
 }
 
 .nav-links {
-
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 }
 
 .nav-links a {
-
     color: #b8bdc7;
-
     text-decoration: none;
-
     font-size: 12px;
-
     font-weight: 800;
-
     letter-spacing: .5px;
-
     transition: .3s;
 }
 
 .nav-links a:hover {
-
     color: white;
 }
 
 .subscribe {
-
-    background:
-        var(--red);
-
-    padding:
-        11px 18px;
-
-    border-radius:
-        5px;
-
+    background: var(--red);
+    padding: 11px 18px;
+    border-radius: 5px;
     color: white !important;
-
-    box-shadow:
-        0 8px 25px
+    box-shadow: 0 8px 25px
         rgba(229,9,47,.15);
 }
 
 .subscribe:hover {
-
-    background:
-        var(--red-light);
-
-    transform:
-        translateY(-2px);
+    background: var(--red-light);
+    transform: translateY(-2px);
 }
 
 .menu {
-
     display: none;
-
     font-size: 25px;
-
     cursor: pointer;
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
-
+/* ===== HERO ===== */
 .hero {
-
     min-height: 100vh;
-
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     overflow: hidden;
-
-    /*
-       PUT YOUR BANNER HERE
-
-       Rename your banner file to:
-
-       quietframe-banner.jpg
-
-       and place it beside index.html.
-    */
-
-    background-image:
-
-        linear-gradient(
-            90deg,
-            rgba(2,3,5,.96) 0%,
-            rgba(2,3,5,.86) 32%,
-            rgba(2,3,5,.45) 68%,
-            rgba(2,3,5,.82) 100%
-        ),
-
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.15),
-            rgba(0,0,0,.85)
-        ),
-
-        url("quietframe-banner.jpg");
-
-    background-size:
-        cover;
-
-    background-position:
-        center;
-
-    background-repeat:
-        no-repeat;
+    background-image: radial-gradient(circle at 78% 38%,rgba(255,23,68,.18),transparent 22%),
+      radial-gradient(circle at 82% 75%,rgba(42,72,150,.13),transparent 25%),
+      linear-gradient(115deg,#020305 0%,#080a10 47%,#090a10 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-
-/* Dark cinematic overlay */
-
 .hero::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 55%,
-            var(--black) 100%
-        );
-
+    background: linear-gradient(180deg,transparent 50%,#030406 100%);
     pointer-events: none;
 }
 
-
-/* Red cinematic light */
-
 .hero-light {
-
     position: absolute;
-
     width: 500px;
     height: 500px;
-
     right: -180px;
     top: 20%;
-
-    background:
-        rgba(229,9,47,.12);
-
-    filter:
-        blur(110px);
-
+    background: rgba(229,9,47,.12);
+    filter: blur(110px);
     border-radius: 50%;
 }
 
-
-/* Hero content */
-
 .hero-content {
-
     position: relative;
-
     z-index: 5;
-
     width: 100%;
-
     max-width: 1250px;
-
     margin: auto;
-
-    padding:
-        130px 7% 90px;
-
-    animation:
-        heroEnter 1.1s ease;
+    padding: 130px 7% 90px;
+    animation: heroEnter 1.1s ease;
+    padding-top: 145px;
 }
 
+.small-title {
+    color: var(--red-light);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 115px);
+    line-height: .87;
+    font-weight: 1000;
+    letter-spacing: -5px;
+    text-shadow: 0 12px 55px rgba(0,0,0,.5);
+}
+
+.hero h1 span {
+    color: var(--red);
+    text-shadow: 0 0 45px rgba(255,23,68,.42);
+}
+
+.hero p {
+    max-width: 650px;
+    margin-top: 30px;
+    color: #c2c6ce;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 24px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.primary {
+    background: linear-gradient(135deg,#e5092f,#ff1744);
+    box-shadow: 0 15px 40px rgba(255,23,68,.24);
+}
+
+.primary:hover {
+    background: var(--red-light);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 50px rgba(255,23,68,.35);
+}
+
+.secondary {
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+}
+
+.secondary:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.08);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 35px;
+    left: 7%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.scroll-indicator span {
+    width: 45px;
+    height: 1px;
+    background: #555;
+}
+
+
+/* ===== SHARED SECTION / CARD STYLES ===== */
+section {
+    padding: 110px 7%;
+    position: relative;
+}
+
+.section-header {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-label {
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 9px;
+}
+
+.section-header h2 {
+    font-size: clamp(35px,5vw,55px);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.section-header h2 span {
+    color: var(--red);
+}
+
+.section-header p {
+    color: #747b87;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.videos {
+    background: linear-gradient(
+            180deg,
+            var(--black2),
+            #050608
+        );
+}
+
+
+/* ===== VIDEOS ===== */
+.video-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+    position: relative;
+}
+
+.video-card {
+    background: linear-gradient(180deg,rgba(18,21,29,.92),rgba(9,11,16,.96));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+    box-shadow: 0 12px 45px rgba(0,0,0,.18);
+}
+
+.video-card:hover {
+    transform: translateY(-10px) scale(1.012);
+    border-color: rgba(229,9,47,.55);
+    box-shadow: 0 25px 65px rgba(0,0,0,.5),0 0 35px rgba(255,23,68,.08);
+}
+
+.thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+
+.video-card:hover .thumbnail img {
+    transform: scale(1.06);
+}
+
+.play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(229,9,47,.94);
+    font-size: 21px;
+    box-shadow: 0 0 35px
+        rgba(229,9,47,.35);
+    transition: .3s;
+    border: 1px solid rgba(255,255,255,.25);
+    backdrop-filter: blur(7px);
+}
+
+.video-card:hover .play-button {
+    transform: translate(-50%,-50%)
+        scale(1.12);
+}
+
+.video-info {
+    padding: 22px;
+}
+
+.video-number {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.video-info h3 {
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+.video-info p {
+    color: #737985;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.watch {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--red);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    transition: .3s;
+}
+
+.watch:hover {
+    color: var(--red-light);
+    transform: translateX(4px);
+}
+
+.games {
+    background: var(--black);
+}
+
+
+/* ===== GAMES ===== */
+.game-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.game {
+    min-height: 390px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    padding: 34px;
+    transition: .4s;
+    box-shadow: 0 20px 65px rgba(0,0,0,.25);
+}
+
+.game::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            0deg,
+            rgba(0,0,0,.95),
+            transparent 70%
+        );
+}
+
+.game:hover {
+    transform: translateY(-9px) scale(1.01);
+    border-color: var(--red);
+    box-shadow: 0 30px 70px rgba(0,0,0,.45),0 0 35px rgba(255,23,68,.08);
+}
+
+.gta {
+    background: linear-gradient(
+            135deg,
+            rgba(0,0,0,.25),
+            rgba(229,9,47,.08)
+        ),
+
+        radial-gradient(
+            circle at 75% 20%,
+            #5b1717,
+            #11151c 65%
+        );
+}
+
+.rdr {
+    background: linear-gradient(
+            135deg,
+            rgba(0,0,0,.25),
+            rgba(150,60,20,.08)
+        ),
+
+        radial-gradient(
+            circle at 75% 20%,
+            #60351e,
+            #16100d 65%
+        );
+}
+
+.game-content {
+    position: relative;
+    z-index: 2;
+    padding: 4px;
+}
+
+.game-tag {
+    color: var(--red-light);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.game h3 {
+    font-size: 40px;
+    margin-top: 7px;
+    text-shadow: 0 8px 30px rgba(0,0,0,.6);
+}
+
+.game p {
+    color: #a5a9b0;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.about {
+    background: linear-gradient(180deg,#07090d,#050608);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.about-content p {
+    color: #a6abb4;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.about-content strong {
+    color: white;
+}
+
+
+/* ===== CHANNEL / SUBSCRIBE ===== */
+.channel {
+    background: radial-gradient(circle at center,rgba(255,23,68,.13),transparent 38%),#050608;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.channel-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 30px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(145deg,rgba(20,23,31,.88),rgba(7,9,13,.94));
+    box-shadow: 0 30px 100px rgba(0,0,0,.45),0 0 55px rgba(255,23,68,.06);
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(255,255,255,.11);
+}
+
+.channel-logo {
+    width: 126px;
+    height: 126px;
+    margin: auto auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid var(--red);
+    background: #090b10;
+    color: var(--red);
+    font-size: 35px;
+    font-weight: 1000;
+    box-shadow: 0 0 0 9px rgba(255,23,68,.045),0 0 55px rgba(255,23,68,.3);
+    position: relative;
+    z-index: 1;
+    border-width: 2px;
+}
+
+.channel-box h2 {
+    font-size: 36px;
+}
+
+.channel-handle {
+    color: #707783;
+    margin: 10px 0 25px;
+}
+
+.channel-box p {
+    color: #858b96;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 55px 7% 28px;
+    text-align: center;
+    background: #020304;
+    border-top: 1px solid var(--border);
+    padding-top: 65px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.footer-tagline {
+    color: #555b65;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #777e89;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+.copyright {
+    color: #3e434b;
+    font-size: 10px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-brand img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,23,68,.8);
+    box-shadow: 0 0 0 5px rgba(255,23,68,.06),0 0 30px rgba(255,23,68,.28);
+    transition: .3s;
+}
+
+.nav-brand:hover img {
+    transform: rotate(-4deg) scale(1.06);
+    box-shadow: 0 0 28px rgba(229,9,47,.35);
+}
+
+.nav-brand .logo {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+.hero-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+    position: relative;
+    padding: 8px 13px 8px 8px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 18px;
+    background: rgba(255,255,255,.035);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 15px 50px rgba(0,0,0,.22);
+}
+
+.hero-brand img {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--qf-red);
+    box-shadow: 0 0 0 7px rgba(255,23,68,.05),0 0 45px rgba(255,23,68,.3);
+}
+
+.hero-brand-copy {
+    color: #8e95a0;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1.7;
+}
+
+.channel-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.channel-stats {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 auto 26px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-pill {
+    padding: 9px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.09);
+    background: rgba(255,255,255,.045);
+    color: #a5abb5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-color: rgba(255,255,255,.1);
+}
+
+.stat-pill strong {
+    color: #fff;
+    text-shadow: 0 0 14px rgba(255,23,68,.4);
+}
+
+
+/* ===== CHANNEL SUBSCRIBER MILESTONE WIDGET ===== */
+.sub-countdown {
+    position: relative;
+    z-index: 1;
+    width: min(620px,92%);
+    margin: 0 auto 28px;
+    padding: 22px 24px;
+    border: 1px solid rgba(255,23,68,.22);
+    border-radius: 18px;
+    background: linear-gradient(135deg,rgba(255,23,68,.09),rgba(255,255,255,.035));
+    box-shadow: 0 18px 55px rgba(0,0,0,.25),0 0 35px rgba(255,23,68,.06);
+    backdrop-filter: blur(14px);
+}
+
+.sub-countdown-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 13px;
+}
+
+.sub-countdown-title {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+    color: #fff;
+}
+
+.sub-countdown-number {
+    font-size: 12px;
+    font-weight: 900;
+    color: #ff5572;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.07);
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg,#e5092f,#ff3155);
+    box-shadow: 0 0 18px rgba(255,23,68,.55);
+    transition: width .8s ease;
+}
+
+.sub-countdown-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 11px;
+    color: #8e96a3;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.milestone-message {
+    margin-top: 13px;
+    color: #c5cad2;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.latest-upload-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 4;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #e5092f;
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(229,9,47,.4);
+}
+
+.video-grid::before {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background: rgba(229,9,47,.055);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.youtube-strip {
+    max-width: 1250px;
+    margin: 0 auto 35px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255,255,255,.1) !important;
+    border-radius: 10px;
+    background: linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,23,68,.045)) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    box-shadow: 0 15px 50px rgba(0,0,0,.2);
+    backdrop-filter: blur(16px);
+}
+
+.youtube-strip-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #9da4af;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.youtube-icon {
+    width: 30px;
+    height: 21px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: #ff0033;
+    color: white;
+    font-size: 11px;
+    box-shadow: 0 0 22px rgba(255,23,68,.35);
+}
+
+.youtube-strip a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.youtube-strip a:hover {
+    color: var(--red-light);
+}
+
+.auto-badge {
+    color: #737a85;
+    font-size: 9px;
+    letter-spacing: 1px;
+    border-color: rgba(255,23,68,.3) !important;
+    background: rgba(255,23,68,.08) !important;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,rgba(255,23,68,.04),transparent 40%,rgba(255,23,68,.08));
+    pointer-events: none;
+}
+
+.hero-buttons .button {
+    border-radius: 10px;
+    padding: 15px 23px;
+}
+
+.hero::marker {
+    display: none;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(900px,75%);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg,transparent,rgba(255,23,68,.35),transparent);
+    opacity: .55;
+}
+
+.section-label::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--qf-red);
+    box-shadow: 0 0 12px rgba(255,23,68,.6);
+}
+
+.thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,transparent 55%,rgba(0,0,0,.42));
+    pointer-events: none;
+}
+
+.game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,rgba(255,255,255,.05),transparent 35%);
+    pointer-events: none;
+}
+
+.channel-box::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg,rgba(255,23,68,.28),transparent 35%,transparent 70%,rgba(255,255,255,.06));
+    pointer-events: none;
+}
+
+.footer-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,23,68,.65);
+    box-shadow: 0 0 22px rgba(255,23,68,.2);
+}
+
+.hero-content::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    right: 13%;
+    top: 35%;
+    background: #ff1744;
+    box-shadow: 0 0 22px 5px rgba(255,23,68,.35);
+    animation: qfFloat 4s ease-in-out infinite;
+    opacity: .8;
+}
+
+.hero-status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    color: #777f8c;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+.hero-status-row span {
+    padding: 8px 11px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 999px;
+    background: rgba(255,255,255,.025);
+    backdrop-filter: blur(8px);
+}
+
+.hero-status-row span:first-child {
+    color: #c8cdd5;
+    border-color: rgba(55,255,145,.16);
+}
+
+.hero-status-row b {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #55e68b;
+    box-shadow: 0 0 12px rgba(85,230,139,.7);
+    margin-right: 7px;
+}
+
+
+/* ===== HERO SUBSCRIBER MILESTONE WIDGET ===== */
+.hero-milestone-v4 {
+    width: min(760px,92vw);
+    margin: 28px auto 0;
+    padding: 22px 24px;
+    border: 1px solid rgba(255,60,60,.32);
+    border-radius: 22px;
+    background: linear-gradient(135deg,rgba(15,15,18,.92),rgba(55,8,12,.72));
+    box-shadow: 0 0 35px rgba(255,25,45,.16),inset 0 0 25px rgba(255,35,50,.04);
+    backdrop-filter: blur(12px);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-milestone-v4:before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg,transparent,rgba(255,60,60,.13),transparent);
+    transform: translateX(-100%);
+    animation: qfShine 4s infinite;
+    pointer-events: none;
+}
+
+.milestone-top, .milestone-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    position: relative;
+    z-index: 1;
+}
+
+.milestone-live {
+    color: #ff6262;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.milestone-live span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff3030;
+    box-shadow: 0 0 12px #ff3030;
+    animation: qfPulse 1.3s infinite;
+}
+
+.milestone-top > span:last-child {
+    color: #b9b9c4;
+}
+
+.milestone-number {
+    margin: 10px 0 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.milestone-number strong {
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,55,55,.35);
+}
+
+.milestone-number span {
+    font-size: 15px;
+    color: #aaa;
+    letter-spacing: .8px;
+}
+
+.milestone-number b {
+    color: #fff;
+}
+
+.milestone-track {
+    height: 12px;
+    background: rgba(255,255,255,.09);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.milestone-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#8d111b,#ff3348,#ff6674);
+    box-shadow: 0 0 18px rgba(255,45,65,.65);
+    transition: width .9s ease;
+}
+
+.milestone-bottom {
+    margin-top: 10px;
+    color: #9c9ca7;
+    font-size: 11px;
+}
+
+#heroMilestoneMessage {
+    color: #d2d2d8;
+}
+
+#heroMilestonePercent {
+    color: #ff6872;
+}
+
+@media(max-width:600px) {
+  .sub-countdown {
+    padding: 18px;
+  }
+  .sub-countdown-top, .sub-countdown-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-milestone-v4 {
+    padding: 18px;
+    margin-top: 20px;
+  }
+  .milestone-number strong {
+    font-size: 38px;
+  }
+  .milestone-top, .milestone-bottom {
+    font-size: 9px;
+  }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:800px) {
+  .hero-brand img {
+    width: 62px;
+    height: 62px;
+  }
+  .youtube-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  nav {
+    padding: 0 20px;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: rgba(5,5,7,.97);
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu {
+    display: block;
+  }
+  .hero {
+    background-position: center;
+  }
+  .hero-content {
+    padding: 130px 7% 90px;
+  }
+  .hero h1 {
+    font-size: clamp(48px,14vw,75px);
+    letter-spacing: -3px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    max-width: 260px;
+  }
+  section {
+    padding: 80px 6%;
+  }
+  .video-grid, .game-grid {
+    grid-template-columns: 1fr;
+  }
+  .game {
+    min-height: 280px;
+  }
+  .game h3 {
+    font-size: 30px;
+  }
+  .channel-box h2 {
+    font-size: 28px;
+  }
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media(max-width:760px) {
+  .hero-status-row {
+    justify-content: center;
+  }
+  nav {
+    height: 70px;
+  }
+  .nav-brand img {
+    width: 42px;
+    height: 42px;
+  }
+  .nav-brand .logo {
+    font-size: 14px;
+  }
+  .hero-content {
+    padding-top: 120px;
+    text-align: center;
+  }
+  .hero-brand {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .hero-brand img {
+    width: 68px;
+    height: 68px;
+  }
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .game {
+    min-height: 300px;
+  }
+  .channel {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+
+/* ===== ANIMATIONS ===== */
 @keyframes heroEnter {
 
     from {
@@ -368,1113 +1332,13 @@ nav {
     }
 }
 
-.small-title {
+@keyframes qfFloat {0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-18px);opacity:1}}
 
-    color:
-        var(--red-light);
+@keyframes qfShine {50%{transform:translateX(100%)}100%{transform:translateX(100%)}}
 
-    font-size:
-        12px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        5px;
-
-    margin-bottom:
-        22px;
-}
-
-.hero h1 {
-
-    font-size:
-        clamp(55px, 9vw, 115px);
-
-    line-height:
-        .87;
-
-    font-weight:
-        1000;
-
-    letter-spacing:
-        -5px;
-}
-
-.hero h1 span {
-
-    color:
-        var(--red);
-
-    text-shadow:
-        0 0 35px
-        rgba(229,9,47,.3);
-}
-
-.hero p {
-
-    max-width:
-        600px;
-
-    margin-top:
-        30px;
-
-    color:
-        #b0b5be;
-
-    font-size:
-        17px;
-
-    line-height:
-        1.75;
-}
-
-.hero-buttons {
-
-    display:
-        flex;
-
-    gap:
-        14px;
-
-    flex-wrap:
-        wrap;
-
-    margin-top:
-        36px;
-}
-
-.button {
-
-    display:
-        inline-block;
-
-    padding:
-        15px 24px;
-
-    border-radius:
-        6px;
-
-    color:
-        white;
-
-    text-decoration:
-        none;
-
-    font-size:
-        13px;
-
-    font-weight:
-        900;
-
-    transition:
-        .3s;
-}
-
-.primary {
-
-    background:
-        var(--red);
-
-    box-shadow:
-        0 12px 35px
-        rgba(229,9,47,.2);
-}
-
-.primary:hover {
-
-    background:
-        var(--red-light);
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 16px 40px
-        rgba(229,9,47,.35);
-}
-
-.secondary {
-
-    background:
-        rgba(255,255,255,.04);
-
-    border:
-        1px solid
-        rgba(255,255,255,.16);
-}
-
-.secondary:hover {
-
-    border-color:
-        var(--red);
-
-    transform:
-        translateY(-4px);
-}
-
-
-/* Hero bottom indicator */
-
-.scroll-indicator {
-
-    position:
-        absolute;
-
-    bottom:
-        35px;
-
-    left:
-        7%;
-
-    z-index:
-        5;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
-
-    color:
-        #666;
-
-    font-size:
-        9px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        3px;
-}
-
-.scroll-indicator span {
-
-    width:
-        45px;
-
-    height:
-        1px;
-
-    background:
-        #555;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-section {
-
-    padding:
-        110px 7%;
-}
-
-.section-header {
-
-    max-width:
-        750px;
-
-    margin:
-        0 auto 55px;
-
-    text-align:
-        center;
-}
-
-.section-label {
-
-    color:
-        var(--red);
-
-    font-size:
-        10px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        4px;
-
-    margin-bottom:
-        12px;
-}
-
-.section-header h2 {
-
-    font-size:
-        clamp(35px,5vw,55px);
-
-    font-weight:
-        900;
-}
-
-.section-header h2 span {
-
-    color:
-        var(--red);
-}
-
-.section-header p {
-
-    color:
-        #747b87;
-
-    margin-top:
-        12px;
-
-    line-height:
-        1.6;
-}
-
-
-/* =========================================================
-   VIDEO SECTION
-========================================================= */
-
-.videos {
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--black2),
-            #050608
-        );
-}
-
-.video-grid {
-
-    max-width:
-        1250px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        30px;
-}
-
-
-/* =========================================================
-   VIDEO CARD
-========================================================= */
-
-.video-card {
-
-    background:
-        var(--card);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        12px;
-
-    overflow:
-        hidden;
-
-    transition:
-        .4s;
-
-    position:
-        relative;
-}
-
-.video-card:hover {
-
-    transform:
-        translateY(-9px);
-
-    border-color:
-        rgba(229,9,47,.55);
-
-    box-shadow:
-        0 25px 60px
-        rgba(0,0,0,.45);
-}
-
-.thumbnail {
-
-    position:
-        relative;
-
-    width:
-        100%;
-
-    aspect-ratio:
-        16 / 9;
-
-    overflow:
-        hidden;
-
-    background:
-        #111;
-}
-
-.thumbnail img {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        cover;
-
-    display:
-        block;
-
-    transition:
-        .5s;
-}
-
-.video-card:hover
-.thumbnail img {
-
-    transform:
-        scale(1.06);
-}
-
-
-/* Play button */
-
-.play-button {
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    top:
-        50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    width:
-        65px;
-
-    height:
-        65px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(229,9,47,.94);
-
-    font-size:
-        21px;
-
-    box-shadow:
-        0 0 35px
-        rgba(229,9,47,.35);
-
-    transition:
-        .3s;
-}
-
-.video-card:hover
-.play-button {
-
-    transform:
-        translate(-50%,-50%)
-        scale(1.12);
-}
-
-
-/* Video info */
-
-.video-info {
-
-    padding:
-        22px;
-}
-
-.video-number {
-
-    color:
-        var(--red);
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        3px;
-}
-
-.video-info h3 {
-
-    font-size:
-        19px;
-
-    margin-top:
-        8px;
-}
-
-.video-info p {
-
-    color:
-        #737985;
-
-    font-size:
-        13px;
-
-    margin-top:
-        8px;
-}
-
-.watch {
-
-    display:
-        inline-block;
-
-    margin-top:
-        18px;
-
-    color:
-        var(--red);
-
-    text-decoration:
-        none;
-
-    font-size:
-        11px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        .5px;
-
-    transition:
-        .3s;
-}
-
-.watch:hover {
-
-    color:
-        var(--red-light);
-
-    transform:
-        translateX(4px);
-}
-
-
-/* =========================================================
-   GAMES
-========================================================= */
-
-.games {
-
-    background:
-        var(--black);
-}
-
-.game-grid {
-
-    max-width:
-        1250px;
-
-    margin:
-        auto;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        28px;
-}
-
-.game {
-
-    min-height:
-        350px;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    border-radius:
-        14px;
-
-    border:
-        1px solid var(--border);
-
-    display:
-        flex;
-
-    align-items:
-        flex-end;
-
-    padding:
-        34px;
-
-    transition:
-        .4s;
-}
-
-.game::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.95),
-            transparent 70%
-        );
-}
-
-.game:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        var(--red);
-}
-
-
-/* GTA */
-
-.gta {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(0,0,0,.25),
-            rgba(229,9,47,.08)
-        ),
-
-        radial-gradient(
-            circle at 75% 20%,
-            #5b1717,
-            #11151c 65%
-        );
-}
-
-
-/* RDR */
-
-.rdr {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(0,0,0,.25),
-            rgba(150,60,20,.08)
-        ),
-
-        radial-gradient(
-            circle at 75% 20%,
-            #60351e,
-            #16100d 65%
-        );
-}
-
-.game-content {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-}
-
-.game-tag {
-
-    color:
-        var(--red-light);
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        3px;
-}
-
-.game h3 {
-
-    font-size:
-        40px;
-
-    margin-top:
-        7px;
-}
-
-.game p {
-
-    color:
-        #a5a9b0;
-
-    max-width:
-        500px;
-
-    line-height:
-        1.6;
-
-    margin-top:
-        8px;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-
-    background:
-        #07090d;
-}
-
-.about-content {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    text-align:
-        center;
-}
-
-.about-content p {
-
-    color:
-        #a6abb4;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.9;
-}
-
-.about-content strong {
-
-    color:
-        white;
-}
-
-
-/* =========================================================
-   CHANNEL
-========================================================= */
-
-.channel {
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(229,9,47,.10),
-            transparent 55%
-        ),
-
-        #050608;
-}
-
-.channel-box {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    padding:
-        60px 30px;
-
-    text-align:
-        center;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        16px;
-
-    background:
-        rgba(13,16,22,.8);
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.3);
-}
-
-.channel-logo {
-
-    width:
-        110px;
-
-    height:
-        110px;
-
-    margin:
-        auto auto 24px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    border:
-        3px solid var(--red);
-
-    background:
-        #090b10;
-
-    color:
-        var(--red);
-
-    font-size:
-        35px;
-
-    font-weight:
-        1000;
-
-    box-shadow:
-        0 0 35px
-        rgba(229,9,47,.18);
-}
-
-.channel-box h2 {
-
-    font-size:
-        36px;
-}
-
-.channel-handle {
-
-    color:
-        #707783;
-
-    margin:
-        10px 0 25px;
-}
-
-.channel-box p {
-
-    color:
-        #858b96;
-
-    max-width:
-        600px;
-
-    margin:
-        0 auto 28px;
-
-    line-height:
-        1.7;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    padding:
-        55px 7% 28px;
-
-    text-align:
-        center;
-
-    background:
-        #020304;
-
-    border-top:
-        1px solid var(--border);
-}
-
-.footer-logo {
-
-    font-size:
-        24px;
-
-    font-weight:
-        900;
-}
-
-.footer-logo span {
-
-    color:
-        var(--red);
-}
-
-.footer-tagline {
-
-    color:
-        #555b65;
-
-    margin-top:
-        10px;
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-}
-
-.footer-links {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        25px;
-
-    margin:
-        25px 0;
-}
-
-.footer-links a {
-
-    color:
-        #777e89;
-
-    text-decoration:
-        none;
-
-    font-size:
-        12px;
-
-    transition:
-        .3s;
-}
-
-.footer-links a:hover {
-
-    color:
-        var(--red);
-}
-
-.copyright {
-
-    color:
-        #3e434b;
-
-    font-size:
-        10px;
-}
-
-
-/* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-
-.reveal {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.show {
-
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:800px) {
-
-    nav {
-
-        padding:
-            0 20px;
-    }
-
-    .nav-links {
-
-        display:
-            none;
-
-        position:
-            absolute;
-
-        top:
-            76px;
-
-        left:
-            0;
-
-        width:
-            100%;
-
-        padding:
-            25px;
-
-        background:
-            rgba(5,5,7,.97);
-
-        flex-direction:
-            column;
-
-        text-align:
-            center;
-
-        border-bottom:
-            1px solid #222;
-    }
-
-    .nav-links.show {
-
-        display:
-            flex;
-    }
-
-    .menu {
-
-        display:
-            block;
-    }
-
-    .hero {
-
-        background-position:
-            center;
-    }
-
-    .hero-content {
-
-        padding:
-            130px 7% 90px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(48px,14vw,75px);
-
-        letter-spacing:
-            -3px;
-    }
-
-    .hero p {
-
-        font-size:
-            15px;
-    }
-
-    .hero-buttons {
-
-        flex-direction:
-            column;
-
-        max-width:
-            260px;
-    }
-
-    section {
-
-        padding:
-            80px 6%;
-    }
-
-    .video-grid,
-    .game-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .game {
-
-        min-height:
-            280px;
-    }
-
-    .game h3 {
-
-        font-size:
-            30px;
-    }
-
-    .channel-box h2 {
-
-        font-size:
-            28px;
-    }
-
-    .scroll-indicator {
-
-        display:
-            none;
-    }
-}
-
+@keyframes qfPulse {50%{opacity:.35;transform:scale(.7)}}
 </style>
+
 </head>
 
 
@@ -1487,8 +1351,11 @@ footer {
 
 <nav id="navbar">
 
-    <a href="#home" class="logo">
-        QUIETFRAME<span> GAMING</span>
+    <a href="#home" class="nav-brand">
+        <img src="quietframe-channel-logo.png" alt="Quietframe Gaming logo">
+        <span class="logo">
+            QUIETFRAME<span> GAMING</span>
+        </span>
     </a>
 
 
@@ -1546,6 +1413,14 @@ footer {
 
     <div class="hero-content">
 
+        <div class="hero-brand">
+            <img src="quietframe-channel-logo.png" alt="Quietframe Gaming channel logo">
+            <div class="hero-brand-copy">
+                OFFICIAL CHANNEL WEBSITE<br>
+                @QUIETFRAMEGAMING
+            </div>
+        </div>
+
         <div class="small-title">
             WELCOME TO
         </div>
@@ -1584,6 +1459,31 @@ footer {
 
         </div>
 
+        <div class="hero-status-row">
+            <span><b></b> CHANNEL ONLINE</span>
+            <span>GTA V</span>
+            <span>RDR2</span>
+            <span>@QuietframeGaming</span>
+        </div>
+
+        <div class="hero-milestone-v4">
+            <div class="milestone-top">
+                <span class="milestone-live"><span></span> LIVE CHANNEL GOAL</span>
+                <span id="milestoneLabel">ROAD TO 50 SUBSCRIBERS</span>
+            </div>
+            <div class="milestone-number">
+                <strong id="heroSubscriberCount">22</strong>
+                <span>/ <b id="heroMilestoneTarget">50</b> SUBSCRIBERS</span>
+            </div>
+            <div class="milestone-track">
+                <div id="heroMilestoneBar" class="milestone-fill" style="width:44%"></div>
+            </div>
+            <div class="milestone-bottom">
+                <span id="heroMilestoneMessage">28 more subscribers to reach the next milestone 🔥</span>
+                <span id="heroMilestonePercent">44%</span>
+            </div>
+        </div>
+
     </div>
 
 
@@ -1620,6 +1520,22 @@ footer {
 
     </div>
 
+    <div class="youtube-strip reveal">
+        <div class="youtube-strip-left">
+            <span class="youtube-icon">▶</span>
+            <span>NEW UPLOADS • GTA V • RDR2 • MORE</span>
+        </div>
+
+        <span class="auto-badge" id="youtubeUpdateStatus">
+            CHANNEL FEED READY
+        </span>
+
+        <a href="https://www.youtube.com/@QuietframeGaming/videos"
+           target="_blank" rel="noopener noreferrer">
+            VIEW ALL VIDEOS →
+        </a>
+    </div>
+
 
     <div class="video-grid">
 
@@ -1627,6 +1543,8 @@ footer {
         <!-- VIDEO 1 -->
 
         <div class="video-card reveal">
+
+            <span class="latest-upload-badge" data-latest-badge>LATEST UPLOAD</span>
 
             <a
                 href="https://www.youtube.com/watch?v=2mva9Qv4nzg"
@@ -1976,6 +1894,7 @@ footer {
 
 
 <!-- =====================================================
+<!-- =====================================================
      CHANNEL
 ===================================================== -->
 
@@ -1985,7 +1904,8 @@ footer {
 
 
         <div class="channel-logo">
-            QF
+            <img src="quietframe-channel-logo.png"
+                 alt="Quietframe Gaming channel logo">
         </div>
 
 
@@ -1998,6 +1918,24 @@ footer {
             @QuietframeGaming
         </div>
 
+        <div class="channel-stats">
+            <div class="stat-pill"><strong id="subscriberCount">22</strong> SUBSCRIBERS</div>
+            <div class="stat-pill"><strong id="videoCount">15</strong> VIDEOS</div>
+            <div class="stat-pill">GTA V • RDR2</div>
+        </div>
+
+        <div class="sub-countdown">
+            <div class="sub-countdown-top">
+                <span class="sub-countdown-title" id="milestoneTitle">ROAD TO 50 SUBSCRIBERS</span>
+                <span class="sub-countdown-number" id="milestoneNumbers">22 / 50</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" id="milestoneProgress"></div></div>
+            <div class="sub-countdown-bottom">
+                <span id="milestoneStart">0 SUBSCRIBERS</span>
+                <span id="milestoneTarget">50 SUBSCRIBERS</span>
+            </div>
+            <div class="milestone-message" id="milestoneMessage">28 more subscribers to reach the next milestone 🔥</div>
+        </div>
 
         <p>
             Follow the channel for GTA V,
@@ -2025,8 +1963,11 @@ footer {
 
 <footer>
 
-    <div class="footer-logo">
-        QUIETFRAME<span> GAMING</span>
+    <div class="footer-brand">
+        <img src="quietframe-channel-logo.png" alt="Quietframe Gaming channel logo">
+        <div class="footer-logo">
+            QUIETFRAME<span> GAMING</span>
+        </div>
     </div>
 
 
@@ -2064,96 +2005,169 @@ footer {
 
 <script>
 
-/* Mobile menu */
+/* =========================================================
+   QUIETFRAME YOUTUBE AUTO-FEED
+   ---------------------------------------------------------
+   Loads ./youtube.json (regenerated by the GitHub Action
+   from the YouTube Data API) and drives every piece of the
+   page that shows live channel stats: the subscriber count,
+   video count, video cards, and both milestone-progress
+   widgets (hero + channel section). Single fetch, single
+   source of truth, so the two widgets can never disagree.
+========================================================= */
 
-function toggleMenu() {
+const YOUTUBE_DATA_FILE = "./youtube.json";
+const MILESTONE_TIERS = [50, 100, 250, 500, 1000, 2000, 5000, 10000];
 
-    document
-        .getElementById("navLinks")
-        .classList.toggle("show");
-
+function milestoneRange(subscribers) {
+    const count = Math.max(0, Number(subscribers) || 0);
+    let target = MILESTONE_TIERS.find(t => count < t);
+    let start;
+    if (target === undefined) {
+        target = Math.ceil((count + 1) / 10000) * 10000;
+        start = target - 10000;
+    } else {
+        const idx = MILESTONE_TIERS.indexOf(target);
+        start = idx > 0 ? MILESTONE_TIERS[idx - 1] : 0;
+    }
+    const progress = target > start ? Math.min(100, Math.max(0, ((count - start) / (target - start)) * 100)) : 0;
+    const remaining = Math.max(0, target - count);
+    return { count, start, target, progress, remaining };
 }
 
+function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+}
 
-/* Close mobile menu after clicking */
+function updateMilestoneWidgets(subscribers) {
+    const { count, start, target, progress, remaining } = milestoneRange(subscribers);
+    const remainingMsg = remaining === 0
+        ? "🎉 Milestone reached! The next goal is coming up."
+        : remaining.toLocaleString() + " more subscriber" + (remaining === 1 ? "" : "s") + " to reach the next milestone 🔥";
 
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
+    // Channel-section widget
+    setText("milestoneTitle", "ROAD TO " + target.toLocaleString() + " SUBSCRIBERS");
+    setText("milestoneNumbers", count.toLocaleString() + " / " + target.toLocaleString());
+    setText("milestoneStart", start.toLocaleString() + " SUBSCRIBERS");
+    setText("milestoneTarget", target.toLocaleString() + " SUBSCRIBERS");
+    setText("milestoneMessage", remainingMsg);
+    const channelBar = document.getElementById("milestoneProgress");
+    if (channelBar) channelBar.style.width = progress + "%";
 
-        link.addEventListener("click", () => {
+    // Hero widget
+    setText("milestoneLabel", "ROAD TO " + target.toLocaleString() + " SUBSCRIBERS");
+    setText("heroSubscriberCount", count.toLocaleString());
+    setText("heroMilestoneTarget", target.toLocaleString());
+    setText("heroMilestoneMessage", remainingMsg);
+    setText("heroMilestonePercent", Math.round(progress) + "%");
+    const heroBar = document.getElementById("heroMilestoneBar");
+    if (heroBar) heroBar.style.width = progress.toFixed(1) + "%";
+}
 
-            document
-                .getElementById("navLinks")
-                .classList.remove("show");
+async function loadQuietframeFeed() {
+    const status = document.getElementById("youtubeUpdateStatus");
+    try {
+        const response = await fetch(YOUTUBE_DATA_FILE + "?v=" + Date.now(), { cache: "no-store" });
+        if (!response.ok) throw new Error("youtube.json not found");
+        const data = await response.json();
 
-        });
-
-    });
-
-
-/* Navbar on scroll */
-
-window.addEventListener("scroll", () => {
-
-    const nav =
-        document.getElementById("navbar");
-
-    if (window.scrollY > 50) {
-
-        nav.style.background =
-            "rgba(3,4,6,.94)";
-
-    } else {
-
-        nav.style.background =
-            "rgba(3,4,6,.72)";
-
-    }
-
-});
-
-
-/* Scroll reveal */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const observer =
-    new IntersectionObserver(
-
-        (entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target
-                        .classList
-                        .add("show");
-
-                    observer
-                        .unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: .12
+        if (data.channel) {
+            if (data.channel.subscribers !== undefined) {
+                const subscribers = Number(data.channel.subscribers) || 0;
+                setText("subscriberCount", subscribers.toLocaleString());
+                updateMilestoneWidgets(subscribers);
+            }
+            if (data.channel.videoCount !== undefined) {
+                setText("videoCount", Number(data.channel.videoCount).toLocaleString());
+            }
         }
 
-    );
+        if (Array.isArray(data.videos) && data.videos.length) {
+            const cards = document.querySelectorAll("#videos .video-card");
+            data.videos.slice(0, cards.length).forEach((video, index) => {
+                const card = cards[index];
+                if (!card || !video.id) return;
+                const id = video.id;
+                const title = video.title || "Quietframe Gaming";
+                const description = video.description || "Latest gaming adventure.";
+                const thumbnail = card.querySelector(".thumbnail");
+                const mainLink = thumbnail ? thumbnail.closest("a") : null;
+                const watchLink = card.querySelector(".watch");
+                const image = card.querySelector(".thumbnail img");
+                const heading = card.querySelector(".video-info h3");
+                const text = card.querySelector(".video-info p");
+                const url = "https://www.youtube.com/watch?v=" + encodeURIComponent(id);
+                if (mainLink) mainLink.href = url;
+                if (watchLink) watchLink.href = url;
+                if (image) {
+                    image.src = "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/maxresdefault.jpg";
+                    image.onerror = function () {
+                        this.onerror = null;
+                        this.src = "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/hqdefault.jpg";
+                    };
+                    image.alt = title;
+                }
+                if (heading) heading.textContent = title;
+                if (text) text.textContent = description;
+            });
+            document.querySelectorAll("[data-latest-badge]").forEach((badge, index) => {
+                badge.style.display = index === 0 ? "block" : "none";
+            });
+        }
+
+        const updated = data.updatedAt ? new Date(data.updatedAt) : new Date();
+        if (status) status.textContent = "AUTO UPDATED • " + updated.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+    } catch (error) {
+        if (status) status.textContent = "YOUTUBE FEED READY • WAITING FOR GITHUB UPDATE";
+        console.info("Quietframe feed:", error.message);
+    }
+}
+
+loadQuietframeFeed();
+setInterval(loadQuietframeFeed, 10 * 60 * 1000);
 
 
-revealElements.forEach(element => {
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-    observer.observe(element);
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}
 
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("show");
+    });
 });
+
+
+/* =========================================================
+   NAVBAR ON SCROLL
+========================================================= */
+
+window.addEventListener("scroll", () => {
+    const nav = document.getElementById("navbar");
+    nav.style.background = window.scrollY > 50 ? "rgba(3,4,6,.94)" : "rgba(3,4,6,.72)";
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: .12 });
+
+revealElements.forEach(element => observer.observe(element));
 
 </script>
 

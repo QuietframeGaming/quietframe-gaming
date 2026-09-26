@@ -1,0 +1,31 @@
+{
+  "channel": {
+    "name": "Quietframe Gaming",
+    "handle": "@QuietframeGaming",
+    "subscribers": 22,
+    "videoCount": 15
+  },
+  "videos": [
+    {
+      "id": "2mva9Qv4nzg",
+      "title": "Quietframe Gaming",
+      "description": "Latest gaming adventure."
+    },
+    {
+      "id": "OhTnsJNVMks",
+      "title": "Quietframe Gaming",
+      "description": "Latest gaming adventure."
+    },
+    {
+      "id": "0NWBOx_gc28",
+      "title": "Quietframe Gaming",
+      "description": "Latest gaming adventure."
+    },
+    {
+      "id": "UfoB7emRx9k",
+      "title": "Quietframe Gaming",
+      "description": "Latest gaming adventure."
+    }
+  ],
+  "updatedAt": null
+}
