@@ -48,7 +48,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /* ===== BACKGROUND GLOW / GRID ===== */
 body::before {
     content: "";
@@ -83,7 +82,6 @@ body::after {
     background-size: 64px 64px;
     z-index: -1;
 }
-
 
 /* ===== NAVBAR ===== */
 nav {
@@ -154,7 +152,6 @@ nav {
     font-size: 25px;
     cursor: pointer;
 }
-
 
 /* ===== HERO ===== */
 .hero {
@@ -291,7 +288,6 @@ nav {
     background: #555;
 }
 
-
 /* ===== SHARED SECTION / CARD STYLES ===== */
 section {
     padding: 110px 7%;
@@ -338,7 +334,6 @@ section {
             #050608
         );
 }
-
 
 /* ===== VIDEOS ===== */
 .video-grid {
@@ -452,7 +447,6 @@ section {
 .games {
     background: var(--black);
 }
-
 
 /* ===== GAMES ===== */
 .game-grid {
@@ -568,7 +562,6 @@ section {
     color: white;
 }
 
-
 /* ===== CHANNEL / SUBSCRIBE ===== */
 .channel {
     background: radial-gradient(circle at center,rgba(255,23,68,.13),transparent 38%),#050608;
@@ -624,7 +617,6 @@ section {
     margin: 0 auto 28px;
     line-height: 1.7;
 }
-
 
 /* ===== FOOTER ===== */
 footer {
@@ -778,79 +770,6 @@ footer {
     color: #fff;
     text-shadow: 0 0 14px rgba(255,23,68,.4);
 }
-
-
-/* ===== CHANNEL SUBSCRIBER MILESTONE WIDGET ===== */
-.sub-countdown {
-    position: relative;
-    z-index: 1;
-    width: min(620px,92%);
-    margin: 0 auto 28px;
-    padding: 22px 24px;
-    border: 1px solid rgba(255,23,68,.22);
-    border-radius: 18px;
-    background: linear-gradient(135deg,rgba(255,23,68,.09),rgba(255,255,255,.035));
-    box-shadow: 0 18px 55px rgba(0,0,0,.25),0 0 35px rgba(255,23,68,.06);
-    backdrop-filter: blur(14px);
-}
-
-.sub-countdown-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 13px;
-}
-
-.sub-countdown-title {
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 1.6px;
-    color: #fff;
-}
-
-.sub-countdown-number {
-    font-size: 12px;
-    font-weight: 900;
-    color: #ff5572;
-}
-
-.progress-track {
-    width: 100%;
-    height: 10px;
-    overflow: hidden;
-    border-radius: 999px;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.07);
-}
-
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    border-radius: inherit;
-    background: linear-gradient(90deg,#e5092f,#ff3155);
-    box-shadow: 0 0 18px rgba(255,23,68,.55);
-    transition: width .8s ease;
-}
-
-.sub-countdown-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 11px;
-    color: #8e96a3;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.milestone-message {
-    margin-top: 13px;
-    color: #c5cad2;
-    font-size: 11px;
-    font-weight: 700;
-}
-
 .latest-upload-badge {
     position: absolute;
     top: 12px;
@@ -1061,144 +980,6 @@ section::before {
     box-shadow: 0 0 12px rgba(85,230,139,.7);
     margin-right: 7px;
 }
-
-
-/* ===== HERO SUBSCRIBER MILESTONE WIDGET ===== */
-.hero-milestone-v4 {
-    width: min(760px,92vw);
-    margin: 28px auto 0;
-    padding: 22px 24px;
-    border: 1px solid rgba(255,60,60,.32);
-    border-radius: 22px;
-    background: linear-gradient(135deg,rgba(15,15,18,.92),rgba(55,8,12,.72));
-    box-shadow: 0 0 35px rgba(255,25,45,.16),inset 0 0 25px rgba(255,35,50,.04);
-    backdrop-filter: blur(12px);
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-milestone-v4:before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(90deg,transparent,rgba(255,60,60,.13),transparent);
-    transform: translateX(-100%);
-    animation: qfShine 4s infinite;
-    pointer-events: none;
-}
-
-.milestone-top, .milestone-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-    position: relative;
-    z-index: 1;
-}
-
-.milestone-live {
-    color: #ff6262;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.milestone-live span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ff3030;
-    box-shadow: 0 0 12px #ff3030;
-    animation: qfPulse 1.3s infinite;
-}
-
-.milestone-top > span:last-child {
-    color: #b9b9c4;
-}
-
-.milestone-number {
-    margin: 10px 0 12px;
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    position: relative;
-    z-index: 1;
-}
-
-.milestone-number strong {
-    font-size: 46px;
-    line-height: 1;
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255,55,55,.35);
-}
-
-.milestone-number span {
-    font-size: 15px;
-    color: #aaa;
-    letter-spacing: .8px;
-}
-
-.milestone-number b {
-    color: #fff;
-}
-
-.milestone-track {
-    height: 12px;
-    background: rgba(255,255,255,.09);
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
-
-.milestone-fill {
-    height: 100%;
-    border-radius: 999px;
-    background: linear-gradient(90deg,#8d111b,#ff3348,#ff6674);
-    box-shadow: 0 0 18px rgba(255,45,65,.65);
-    transition: width .9s ease;
-}
-
-.milestone-bottom {
-    margin-top: 10px;
-    color: #9c9ca7;
-    font-size: 11px;
-}
-
-#heroMilestoneMessage {
-    color: #d2d2d8;
-}
-
-#heroMilestonePercent {
-    color: #ff6872;
-}
-
-@media(max-width:600px) {
-  .sub-countdown {
-    padding: 18px;
-  }
-  .sub-countdown-top, .sub-countdown-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hero-milestone-v4 {
-    padding: 18px;
-    margin-top: 20px;
-  }
-  .milestone-number strong {
-    font-size: 38px;
-  }
-  .milestone-top, .milestone-bottom {
-    font-size: 9px;
-  }
-}
-
-
 /* ===== RESPONSIVE ===== */
 @media(max-width:800px) {
   .hero-brand img {
@@ -1311,7 +1092,6 @@ section::before {
   }
 }
 
-
 /* ===== ANIMATIONS ===== */
 @keyframes heroEnter {
 
@@ -1334,16 +1114,41 @@ section::before {
 
 @keyframes qfFloat {0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-18px);opacity:1}}
 
-@keyframes qfShine {50%{transform:translateX(100%)}100%{transform:translateX(100%)}}
 
-@keyframes qfPulse {50%{opacity:.35;transform:scale(.7)}}
+/* ===== GAME ARTWORK ===== */
+
+.game-logo-img {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(62%, 380px);
+    max-height: 46%;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,.7));
+    transition: .4s;
+}
+
+.game:hover .game-logo-img {
+    transform: translateX(-50%) scale(1.04);
+}
+
+.rdr {
+    background:
+        linear-gradient(135deg, rgba(0,0,0,.15), rgba(0,0,0,.05)),
+        url("rdr2-art.jpg") 10% center / cover no-repeat;
+}
+
+@media(max-width:600px) {
+    .game-logo-img { top: 22px; width: 70%; }
+}
+
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      NAVIGATION
@@ -1357,7 +1162,6 @@ section::before {
             QUIETFRAME<span> GAMING</span>
         </span>
     </a>
-
 
     <div class="nav-links" id="navLinks">
 
@@ -1391,7 +1195,6 @@ section::before {
 
     </div>
 
-
     <div
         class="menu"
         onclick="toggleMenu()"
@@ -1401,7 +1204,6 @@ section::before {
 
 </nav>
 
-
 <!-- =====================================================
      HERO
 ===================================================== -->
@@ -1409,7 +1211,6 @@ section::before {
 <header class="hero" id="home">
 
     <div class="hero-light"></div>
-
 
     <div class="hero-content">
 
@@ -1425,19 +1226,16 @@ section::before {
             WELCOME TO
         </div>
 
-
         <h1>
             QUIETFRAME<br>
             <span>GAMING</span>
         </h1>
-
 
         <p>
             Gaming • Stories • Chaos • Adventure.
             Join the journey through GTA V,
             Red Dead Redemption 2 and more.
         </p>
-
 
         <div class="hero-buttons">
 
@@ -1447,7 +1245,6 @@ section::before {
             >
                 WATCH VIDEOS ▶
             </a>
-
 
             <a
                 href="https://www.youtube.com/@QuietframeGaming"
@@ -1466,26 +1263,7 @@ section::before {
             <span>@QuietframeGaming</span>
         </div>
 
-        <div class="hero-milestone-v4">
-            <div class="milestone-top">
-                <span class="milestone-live"><span></span> LIVE CHANNEL GOAL</span>
-                <span id="milestoneLabel">ROAD TO 50 SUBSCRIBERS</span>
-            </div>
-            <div class="milestone-number">
-                <strong id="heroSubscriberCount">22</strong>
-                <span>/ <b id="heroMilestoneTarget">50</b> SUBSCRIBERS</span>
-            </div>
-            <div class="milestone-track">
-                <div id="heroMilestoneBar" class="milestone-fill" style="width:44%"></div>
-            </div>
-            <div class="milestone-bottom">
-                <span id="heroMilestoneMessage">28 more subscribers to reach the next milestone 🔥</span>
-                <span id="heroMilestonePercent">44%</span>
-            </div>
-        </div>
-
     </div>
-
 
     <div class="scroll-indicator">
 
@@ -1496,7 +1274,6 @@ section::before {
     </div>
 
 </header>
-
 
 <!-- =====================================================
      VIDEOS
@@ -1536,9 +1313,7 @@ section::before {
         </a>
     </div>
 
-
     <div class="video-grid">
-
 
         <!-- VIDEO 1 -->
 
@@ -1569,7 +1344,6 @@ section::before {
 
             </a>
 
-
             <div class="video-info">
 
                 <div class="video-number">
@@ -1595,7 +1369,6 @@ section::before {
             </div>
 
         </div>
-
 
         <!-- VIDEO 2 -->
 
@@ -1624,7 +1397,6 @@ section::before {
 
             </a>
 
-
             <div class="video-info">
 
                 <div class="video-number">
@@ -1650,7 +1422,6 @@ section::before {
             </div>
 
         </div>
-
 
         <!-- VIDEO 3 -->
 
@@ -1679,7 +1450,6 @@ section::before {
 
             </a>
 
-
             <div class="video-info">
 
                 <div class="video-number">
@@ -1705,7 +1475,6 @@ section::before {
             </div>
 
         </div>
-
 
         <!-- VIDEO 4 -->
 
@@ -1734,7 +1503,6 @@ section::before {
 
             </a>
 
-
             <div class="video-info">
 
                 <div class="video-number">
@@ -1761,11 +1529,9 @@ section::before {
 
         </div>
 
-
     </div>
 
 </section>
-
 
 <!-- =====================================================
      GAMES
@@ -1789,11 +1555,11 @@ section::before {
 
     </div>
 
-
     <div class="game-grid">
 
-
         <div class="game gta reveal">
+
+            <img class="game-logo-img" src="gta5-logo.png" alt="Grand Theft Auto V logo">
 
             <div class="game-content">
 
@@ -1813,7 +1579,6 @@ section::before {
             </div>
 
         </div>
-
 
         <div class="game rdr reveal">
 
@@ -1836,11 +1601,9 @@ section::before {
 
         </div>
 
-
     </div>
 
 </section>
-
 
 <!-- =====================================================
      ABOUT
@@ -1867,7 +1630,6 @@ section::before {
 
         </h2>
 
-
         <p>
 
             Quietframe Gaming is a gaming channel
@@ -1892,7 +1654,6 @@ section::before {
 
 </section>
 
-
 <!-- =====================================================
 <!-- =====================================================
      CHANNEL
@@ -1902,46 +1663,27 @@ section::before {
 
     <div class="channel-box reveal">
 
-
         <div class="channel-logo">
             <img src="quietframe-channel-logo.png"
                  alt="Quietframe Gaming channel logo">
         </div>
 
-
         <h2>
             QUIETFRAME GAMING
         </h2>
-
 
         <div class="channel-handle">
             @QuietframeGaming
         </div>
 
         <div class="channel-stats">
-            <div class="stat-pill"><strong id="subscriberCount">22</strong> SUBSCRIBERS</div>
-            <div class="stat-pill"><strong id="videoCount">15</strong> VIDEOS</div>
             <div class="stat-pill">GTA V • RDR2</div>
-        </div>
-
-        <div class="sub-countdown">
-            <div class="sub-countdown-top">
-                <span class="sub-countdown-title" id="milestoneTitle">ROAD TO 50 SUBSCRIBERS</span>
-                <span class="sub-countdown-number" id="milestoneNumbers">22 / 50</span>
-            </div>
-            <div class="progress-track"><div class="progress-fill" id="milestoneProgress"></div></div>
-            <div class="sub-countdown-bottom">
-                <span id="milestoneStart">0 SUBSCRIBERS</span>
-                <span id="milestoneTarget">50 SUBSCRIBERS</span>
-            </div>
-            <div class="milestone-message" id="milestoneMessage">28 more subscribers to reach the next milestone 🔥</div>
         </div>
 
         <p>
             Follow the channel for GTA V,
             RDR2 and future gaming adventures.
         </p>
-
 
         <a
             href="https://www.youtube.com/@QuietframeGaming"
@@ -1951,11 +1693,9 @@ section::before {
             🔴 VISIT YOUTUBE CHANNEL
         </a>
 
-
     </div>
 
 </section>
-
 
 <!-- =====================================================
      FOOTER
@@ -1970,11 +1710,9 @@ section::before {
         </div>
     </div>
 
-
     <div class="footer-tagline">
         GAMING • STORIES • CHAOS • ADVENTURE
     </div>
-
 
     <div class="footer-links">
 
@@ -1991,13 +1729,11 @@ section::before {
 
     </div>
 
-
     <div class="copyright">
         © 2026 Quietframe Gaming. All rights reserved.
     </div>
 
 </footer>
-
 
 <!-- =====================================================
      JAVASCRIPT
@@ -2006,127 +1742,74 @@ section::before {
 <script>
 
 /* =========================================================
-   QUIETFRAME YOUTUBE AUTO-FEED
-   ---------------------------------------------------------
-   Loads ./youtube.json (regenerated by the GitHub Action
-   from the YouTube Data API) and drives every piece of the
-   page that shows live channel stats: the subscriber count,
-   video count, video cards, and both milestone-progress
-   widgets (hero + channel section). Single fetch, single
-   source of truth, so the two widgets can never disagree.
+   LATEST VIDEOS — loads automatically from your YouTube channel
+   No API key, no GitHub Action. If the feed can't be reached,
+   the 4 videos already in the page stay visible.
 ========================================================= */
 
-const YOUTUBE_DATA_FILE = "./youtube.json";
-const MILESTONE_TIERS = [50, 100, 250, 500, 1000, 2000, 5000, 10000];
+const CHANNEL_ID = "UC51EaOQuHiYoSNTqeDQdwLg";
+const YT_RSS = "https://www.youtube.com/feeds/videos.xml?channel_id=" + CHANNEL_ID;
+const FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(YT_RSS);
+const MAX_VIDEOS = 6;
 
-function milestoneRange(subscribers) {
-    const count = Math.max(0, Number(subscribers) || 0);
-    let target = MILESTONE_TIERS.find(t => count < t);
-    let start;
-    if (target === undefined) {
-        target = Math.ceil((count + 1) / 10000) * 10000;
-        start = target - 10000;
-    } else {
-        const idx = MILESTONE_TIERS.indexOf(target);
-        start = idx > 0 ? MILESTONE_TIERS[idx - 1] : 0;
-    }
-    const progress = target > start ? Math.min(100, Math.max(0, ((count - start) / (target - start)) * 100)) : 0;
-    const remaining = Math.max(0, target - count);
-    return { count, start, target, progress, remaining };
+function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+    }[c]));
 }
 
-function setText(id, value) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = value;
+function timeAgo(dateStr) {
+    const d = new Date(String(dateStr).replace(" ", "T") + (String(dateStr).includes("T") ? "" : "Z"));
+    const s = Math.floor((Date.now() - d) / 1000);
+    if (isNaN(s)) return "";
+    const plural = (n, word) => n + " " + word + (n === 1 ? "" : "s") + " ago";
+    if (s < 3600) return plural(Math.max(1, Math.floor(s / 60)), "minute");
+    if (s < 86400) return plural(Math.floor(s / 3600), "hour");
+    if (s < 604800) return plural(Math.floor(s / 86400), "day");
+    return d.toLocaleDateString([], { dateStyle: "medium" });
 }
 
-function updateMilestoneWidgets(subscribers) {
-    const { count, start, target, progress, remaining } = milestoneRange(subscribers);
-    const remainingMsg = remaining === 0
-        ? "🎉 Milestone reached! The next goal is coming up."
-        : remaining.toLocaleString() + " more subscriber" + (remaining === 1 ? "" : "s") + " to reach the next milestone 🔥";
-
-    // Channel-section widget
-    setText("milestoneTitle", "ROAD TO " + target.toLocaleString() + " SUBSCRIBERS");
-    setText("milestoneNumbers", count.toLocaleString() + " / " + target.toLocaleString());
-    setText("milestoneStart", start.toLocaleString() + " SUBSCRIBERS");
-    setText("milestoneTarget", target.toLocaleString() + " SUBSCRIBERS");
-    setText("milestoneMessage", remainingMsg);
-    const channelBar = document.getElementById("milestoneProgress");
-    if (channelBar) channelBar.style.width = progress + "%";
-
-    // Hero widget
-    setText("milestoneLabel", "ROAD TO " + target.toLocaleString() + " SUBSCRIBERS");
-    setText("heroSubscriberCount", count.toLocaleString());
-    setText("heroMilestoneTarget", target.toLocaleString());
-    setText("heroMilestoneMessage", remainingMsg);
-    setText("heroMilestonePercent", Math.round(progress) + "%");
-    const heroBar = document.getElementById("heroMilestoneBar");
-    if (heroBar) heroBar.style.width = progress.toFixed(1) + "%";
+function videoCardHTML(v, index) {
+    const id = (v.guid || "").split(":").pop();
+    if (!id) return "";
+    const url = "https://www.youtube.com/watch?v=" + encodeURIComponent(id);
+    const num = String(index + 1).padStart(2, "0");
+    return `
+        <div class="video-card reveal">
+            ${index === 0 ? '<span class="latest-upload-badge">LATEST UPLOAD</span>' : ""}
+            <a href="${esc(url)}" target="_blank" rel="noopener">
+                <div class="thumbnail">
+                    <img src="https://i.ytimg.com/vi/${esc(id)}/maxresdefault.jpg"
+                         alt="${esc(v.title)}" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(id)}/hqdefault.jpg';">
+                    <div class="play-button">▶</div>
+                </div>
+            </a>
+            <div class="video-info">
+                <div class="video-number">VIDEO ${num}</div>
+                <h3>${esc(v.title)}</h3>
+                <p>${esc(timeAgo(v.pubDate))}</p>
+                <a href="${esc(url)}" target="_blank" rel="noopener" class="watch">WATCH ON YOUTUBE →</a>
+            </div>
+        </div>`;
 }
 
-async function loadQuietframeFeed() {
+async function loadLatestVideos() {
+    const grid = document.querySelector(".video-grid");
     const status = document.getElementById("youtubeUpdateStatus");
     try {
-        const response = await fetch(YOUTUBE_DATA_FILE + "?v=" + Date.now(), { cache: "no-store" });
-        if (!response.ok) throw new Error("youtube.json not found");
+        const response = await fetch(FEED_URL, { cache: "no-store" });
         const data = await response.json();
+        if (data.status !== "ok" || !data.items || !data.items.length) throw new Error("empty feed");
 
-        if (data.channel) {
-            if (data.channel.subscribers !== undefined) {
-                const subscribers = Number(data.channel.subscribers) || 0;
-                setText("subscriberCount", subscribers.toLocaleString());
-                updateMilestoneWidgets(subscribers);
-            }
-            if (data.channel.videoCount !== undefined) {
-                setText("videoCount", Number(data.channel.videoCount).toLocaleString());
-            }
-        }
-
-        if (Array.isArray(data.videos) && data.videos.length) {
-            const cards = document.querySelectorAll("#videos .video-card");
-            data.videos.slice(0, cards.length).forEach((video, index) => {
-                const card = cards[index];
-                if (!card || !video.id) return;
-                const id = video.id;
-                const title = video.title || "Quietframe Gaming";
-                const description = video.description || "Latest gaming adventure.";
-                const thumbnail = card.querySelector(".thumbnail");
-                const mainLink = thumbnail ? thumbnail.closest("a") : null;
-                const watchLink = card.querySelector(".watch");
-                const image = card.querySelector(".thumbnail img");
-                const heading = card.querySelector(".video-info h3");
-                const text = card.querySelector(".video-info p");
-                const url = "https://www.youtube.com/watch?v=" + encodeURIComponent(id);
-                if (mainLink) mainLink.href = url;
-                if (watchLink) watchLink.href = url;
-                if (image) {
-                    image.src = "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/maxresdefault.jpg";
-                    image.onerror = function () {
-                        this.onerror = null;
-                        this.src = "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/hqdefault.jpg";
-                    };
-                    image.alt = title;
-                }
-                if (heading) heading.textContent = title;
-                if (text) text.textContent = description;
-            });
-            document.querySelectorAll("[data-latest-badge]").forEach((badge, index) => {
-                badge.style.display = index === 0 ? "block" : "none";
-            });
-        }
-
-        const updated = data.updatedAt ? new Date(data.updatedAt) : new Date();
-        if (status) status.textContent = "AUTO UPDATED • " + updated.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+        grid.innerHTML = data.items.slice(0, MAX_VIDEOS).map(videoCardHTML).join("");
+        grid.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+        if (status) status.textContent = "AUTO UPDATED FROM YOUTUBE";
     } catch (error) {
-        if (status) status.textContent = "YOUTUBE FEED READY • WAITING FOR GITHUB UPDATE";
+        if (status) status.textContent = "SHOWING SAVED VIDEOS";
         console.info("Quietframe feed:", error.message);
     }
 }
-
-loadQuietframeFeed();
-setInterval(loadQuietframeFeed, 10 * 60 * 1000);
-
 
 /* =========================================================
    MOBILE MENU
@@ -2142,7 +1825,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
-
 /* =========================================================
    NAVBAR ON SCROLL
 ========================================================= */
@@ -2152,12 +1834,10 @@ window.addEventListener("scroll", () => {
     nav.style.background = window.scrollY > 50 ? "rgba(3,4,6,.94)" : "rgba(3,4,6,.72)";
 });
 
-
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements = document.querySelectorAll(".reveal");
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2167,7 +1847,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: .12 });
 
-revealElements.forEach(element => observer.observe(element));
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+loadLatestVideos();
+setInterval(loadLatestVideos, 10 * 60 * 1000);
 
 </script>
 

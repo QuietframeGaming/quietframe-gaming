@@ -1,16 +1,11 @@
 # Quietframe Gaming Website
 
-Files:
-- `index.html` — website
-- `quietframe-channel-logo.png` — your existing YouTube channel logo, cropped from your screenshot
-- `youtube.json` — feed used by the website
-- `.github/workflows/update-youtube.yml` — automatic YouTube updater
+Upload ALL of these files to the same folder in your GitHub repo:
+- index.html            (the website)
+- quietframe-channel-logo.png  (your channel logo)
+- gta5-logo.png         (GTA V logo, What I Play section)
+- rdr2-art.jpg          (RDR2 artwork, What I Play section)
 
-## Automatic videos / subscribers
-For automatic updates on GitHub Pages, add a GitHub repository secret named:
-
-`YOUTUBE_API_KEY`
-
-The workflow uses your `@QuietframeGaming` handle and updates `youtube.json` every 15 minutes.
-
-The website itself remains static, so the API key is never placed inside `index.html`.
+Latest videos load automatically from your YouTube channel
+(channel ID UC51EaOQuHiYoSNTqeDQdwLg). No API key, no GitHub Action.
+If the feed can't be reached, the 4 saved videos stay on the page.
